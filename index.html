@@ -8,5 +8,21 @@
 <body>
     <input type="text" id="name" placeholder="Enter your name">
     <button id="save" onclick="save()">Click</button>
+    <p id="gretting">Hello!!</p>
+
+    <script>
+        function save(){
+            const nameElement = document.getElementById("name");
+            const username = nameElement.value;
+            localStorage.setItem("name",username);
+
+            const grettingElement = document.getElementById("gretting");
+            grettingElement.innerText = `Hello ${nameElement.value}`;
+
+            const btnElement = document.getElementById("save");
+            btnElement.style.display = "none";
+            nameElement.style.display = "none";
+        }
+    </script>
 </body>
 </html>
